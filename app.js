@@ -17,19 +17,40 @@ const prediction = (str) => {
     if(!validZodiac(str)) return 
 
     const readingCardDrawn = drawReadingCard();
-}
+    const fortuneCard = drawFortuneCard(readingCardDrawn);
+};
 
 // Check if the zodiac string given is valid.
 const validZodiac = (str) => {
     const valid = zodiac.findIndex((element) => element === str);
     return valid >= 0 ? true : false;
-}
+};
 
 // Select a random card from the readingCard array
 const drawReadingCard = () => {
     const card = readingCard[Math.floor(Math.random() * readingCard.length)];
 
     return card;
+};
+
+// Select a random fortune card from the array which connects with the reading card.
+const drawFortuneCard = (card) => {
+
+    let fortuneCard;
+
+    switch(card) {
+        case 'love':
+            fortuneCard = loveCard[Math.floor(Math.random() * loveCard.length)];
+            break;
+        case 'mood':
+            fortuneCard = moodCard[Math.floor(Math.random() * moodCard.length)];
+            break;
+        case 'career':
+            fortuneCard = careerCard[Math.floor(Math.random() * careerCard.length)];
+            break;
+    }
+
+    return fortuneCard;
 };
 
 console.log(prediction('Aries'));
