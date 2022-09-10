@@ -61,4 +61,4 @@ const drawFortuneCard = (card) => {
 
 
 // use console.log to call the function
-console.log(prediction('Aries'));
+console.log(prediction('Scorpio'));
