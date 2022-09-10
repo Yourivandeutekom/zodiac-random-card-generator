@@ -15,6 +15,8 @@ const expectation = ['One week', 'One month', 'One year', 'One decade', 'One gen
 // Add your zodiac sign in this function
 const prediction = (str) => {
     if(!validZodiac(str)) return 
+
+    const readingCardDrawn = drawReadingCard();
 }
 
 // Check if the zodiac string given is valid.
@@ -22,5 +24,12 @@ const validZodiac = (str) => {
     const valid = zodiac.findIndex((element) => element === str);
     return valid >= 0 ? true : false;
 }
+
+// Select a random card from the readingCard array
+const drawReadingCard = () => {
+    const card = readingCard[Math.floor(Math.random() * readingCard.length)];
+
+    return card;
+};
 
 console.log(prediction('Aries'));
