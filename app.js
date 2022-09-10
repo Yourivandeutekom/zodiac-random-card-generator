@@ -12,13 +12,18 @@ const careerCard = ['You will lose your job', 'You will find your dreamjob', 'Yo
 
 const expectation = ['One week', 'One month', 'One year', 'One decade', 'One generation', 'One centennial'];
 
-// Add your zodiac sign in this function
+// Add your zodiac sign in this function, and the computer will predict your fortune. 
 const prediction = (str) => {
     if(!validZodiac(str)) return 
 
     const readingCardDrawn = drawCard(readingCard);
     const fortuneCard = drawFortuneCard(readingCardDrawn);
     const expectationCard = drawCard(expectation);
+
+    return `Your Zodiac sign is: '${str}'. 
+The computer have drawed the following reading card '${readingCardDrawn}'. 
+This tells you the following fortune '${fortuneCard}'. 
+Expect it to happen in '${expectationCard}'.`;
 };
 
 // Check if the zodiac string given is valid.
@@ -54,4 +59,6 @@ const drawFortuneCard = (card) => {
     return fortuneCard;
 };
 
+
+// use console.log to call the function
 console.log(prediction('Aries'));
