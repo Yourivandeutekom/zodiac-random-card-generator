@@ -46,13 +46,13 @@ const drawFortuneCard = (card) => {
 
     switch(card) {
         case 'love':
-            fortuneCard = loveCard[Math.floor(Math.random() * loveCard.length)];
+            fortuneCard = drawCard(loveCard);
             break;
         case 'mood':
-            fortuneCard = moodCard[Math.floor(Math.random() * moodCard.length)];
+            fortuneCard = drawCard(moodCard);
             break;
         case 'career':
-            fortuneCard = careerCard[Math.floor(Math.random() * careerCard.length)];
+            fortuneCard = drawCard(careerCard);
             break;
     }
 
