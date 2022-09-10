@@ -11,3 +11,16 @@ const moodCard = ['You will find happiness', 'Darkness will find you', 'You will
 const careerCard = ['You will lose your job', 'You will find your dreamjob', 'You should quit your job', 'Follow your dreams', 'Stay in your current job', 'Work harder and you will get a raise'];
 
 const expectation = ['One week', 'One month', 'One year', 'One decade', 'One generation', 'One centennial'];
+
+// Add your zodiac sign in this function
+const prediction = (str) => {
+    if(!validZodiac(str)) return 
+}
+
+// Check if the zodiac string given is valid.
+const validZodiac = (str) => {
+    const valid = zodiac.findIndex((element) => element === str);
+    return valid >= 0 ? true : false;
+}
+
+console.log(prediction('Aries'));
