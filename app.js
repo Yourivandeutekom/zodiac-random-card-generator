@@ -16,8 +16,9 @@ const expectation = ['One week', 'One month', 'One year', 'One decade', 'One gen
 const prediction = (str) => {
     if(!validZodiac(str)) return 
 
-    const readingCardDrawn = drawReadingCard();
+    const readingCardDrawn = drawCard(readingCard);
     const fortuneCard = drawFortuneCard(readingCardDrawn);
+    const expectationCard = drawCard(expectation);
 };
 
 // Check if the zodiac string given is valid.
@@ -26,9 +27,9 @@ const validZodiac = (str) => {
     return valid >= 0 ? true : false;
 };
 
-// Select a random card from the readingCard array
-const drawReadingCard = () => {
-    const card = readingCard[Math.floor(Math.random() * readingCard.length)];
+// Select a random card from the array (deck) given
+const drawCard = (arr) => {
+    const card = arr[Math.floor(Math.random() * arr.length)];
 
     return card;
 };
